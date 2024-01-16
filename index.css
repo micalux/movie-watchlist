@@ -1,0 +1,97 @@
+/*
+Colors Palette:
+- dark grey: #121212
+- grey: #2E2E2F
+- light grey: #4B4B4B
+- grey text: #A5A5A5
+- white: #FFFFFF 
+*/
+
+
+html, body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: rgb(128, 128, 128);
+    color: white;
+}
+
+main {
+    margin: 0 auto;
+    background-color: #121212;
+    height: 100%;
+    width: 100%;
+    max-width: 700px;
+}
+
+header {
+    background-image: url("imgs/hero.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25vh;
+}
+
+header h1 {
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 0.8rem;
+}
+
+.main-txt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    margin: auto 2em;
+    height: 100%;
+}
+
+form {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    background-color: red;
+    width: 80%;
+}
+
+/* .form-container {
+    display: flex;
+} */
+
+form input {
+    background-color: #2E2E2F;
+    border: none;
+    padding: 0.4em;
+    padding-left: 2.5em;
+    margin: 0;
+    width: auto;
+    flex-grow: 8;
+    color: white;
+}
+
+form i {
+    position: absolute;
+    left: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+::placeholder, form i {
+    color: #A5A5A5;
+    opacity: 1;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+form button {
+    background-color: #4B4B4B;
+    color: white;
+    border: none;
+    padding: 0 2em;
+    font-size: 0.8rem;
+    margin: 0;
+    display: block;
+}
