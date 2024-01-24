@@ -7,28 +7,28 @@ Colors Palette:
 - white: #FFFFFF 
 */
 
-
 html, body {
     margin: 0 auto;
     padding: 0;
     font-family: 'Inter', sans-serif;
-    background-color: rgb(128, 128, 128);
     color: white;
+    background-color: #121212;
 }
 
 main {
-    margin: 0 auto;
-    background-color: #121212;
-    height: 100%;
     width: 100%;
     max-width: 700px;
+    min-width: 490px;
+    /* check it for other responsive solution */
+    margin: 0 auto;
 }
 
 header {
     background-image: url("imgs/hero.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 25vh;
+    height: 12em;
+    /* margin-bottom: 4em ; */
 }
 
 header h1 {
@@ -38,6 +38,7 @@ header h1 {
 
 header p {
     font-size: 0.8rem;
+    cursor: pointer;
 }
 
 .main-txt {
@@ -47,6 +48,11 @@ header p {
     gap: 1em;
     margin: auto 2em;
     height: 100%;
+}
+
+.main-txt a {
+    color: white;
+    text-decoration: none;
 }
 
 form {
@@ -59,18 +65,19 @@ form {
 
 .form-container {
     position: relative;
-    top: -1em;
+    top: -1.5em;
 }
 
 form input {
     background-color: #2E2E2F;
     border: none;
-    padding: 0.4em;
+    padding: 1em;
     padding-left: 2.5em;
     margin: 0;
     width: auto;
+    font-size: 0.8rem;
     flex-grow: 8;
-    color: white;
+    color: #A5A5A5;
 }
 
 form i {
@@ -95,4 +102,137 @@ form button {
     font-size: 0.8rem;
     margin: 0;
     display: block;
+    cursor: pointer;
+}
+
+.results-container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.default-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2E2E2F;
+}
+
+.default-txt i {
+    font-size: 4rem;
+}
+
+.default-txt h3 {
+    margin-top: 0.3em;
+    margin-bottom: 0;
+}
+
+.search-error {
+    max-width: 70%;
+    text-align: center;
+    color: #2E2E2F;
+
+    /* adjust responsivness */
+}
+
+.default-txt,
+.search-error {
+    margin-top: 50%;
+    margin: 50% auto 0;
+}
+
+.movie-container {
+    margin-top: 1.75em;
+}
+
+.movie-container:first-of-type {
+    margin-top: 4em;
+}
+
+.movie-container .flex-container {
+    display: flex;
+}
+
+.movie-container img {
+    margin-right: 1em;
+}
+
+.movie-info p {
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.row-1,
+.row-2 {
+    display: flex;
+    align-items: baseline;
+}
+
+.row-1 h3 {
+    margin: 0;
+    padding: 0;
+    margin-right: 0.75em;
+    line-height: 1;
+}
+
+.row-1 .fa-star {
+    color: #FEC654;
+    font-size: 0.65rem;
+    margin-right: 0.4em;
+}
+
+.row-1 .rating {
+    margin: 0;
+    padding: 0;
+}
+
+.row-2 .duration,
+.row-2 .genre {
+    margin-right: 1.5em;
+}
+
+.row-2 .watchlist {
+    margin-left: 0.3em;
+}
+
+.description {
+    margin-right: 1.5em;
+    line-height: 1.5;
+    color: #A5A5A5;
+}
+
+.separator {
+    margin-top: 1.75em;
+    border-top: 1px solid #2C2C2C;
+    width: 100%;
+}
+
+
+/* WATCHLIST PAGE */
+
+.separator-watch {
+    margin-top: 1.75em;
+    border-top: 1px solid #ffffff;
+    width: 100%;
+}
+
+.add-movies {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.add-movies h4 {
+    margin: 0;
+}
+
+.add-movies i {
+    font-size: 1rem;
+    margin-right: 0.5em;
 }
