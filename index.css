@@ -154,6 +154,7 @@ form button {
 
 .movie-container img {
     margin-right: 1em;
+    height: 9.3em;
 }
 
 .movie-info p {
@@ -196,8 +197,18 @@ form button {
     margin-right: 1.5em;
 }
 
+.row-2 i {
+    cursor: pointer;
+}
+
 .row-2 .watchlist {
     margin-left: 0.3em;
+    cursor: pointer;
+}
+
+#watchlist-btn {
+    display: flex;
+    align-items: center;
 }
 
 .description {
