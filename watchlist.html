@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -6,7 +7,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="shortcut icon" href="#">
     </head>
     <body>
         <main>
@@ -15,30 +17,25 @@
                     <h1>My Watchlist</h1>
                     <a href="index.html"><p>Search for movies</p></a>
                 </div>
-                <div class="form-container">
-                    <form>
-                        <input type="text" id="search-field" placeholder="Blade Runner">
-                        <button type="submit">Search</button>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </form>
-                </div>
             </header>
 
             <div class="results-container">
-                <div class="default-txt">
+                <div id="watchlist-deafult-txt" class="default-txt">
                     <h3>Your watchlist is looking a little empty...</h3>
-                    <div class="add-movies">
-                        <i class="fa-solid fa-circle-plus"></i>
-                        <h4>Let’s add some movies!</h4>
-                    </div>
+                    <a href="index.html">
+                        <div class="add-movies">
+                            <i class="fa-solid fa-circle-plus"></i>
+                            <h4>Let’s add some movies!</h4>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="movie-container">
+                <div id="watchlist-container" class="movie-container">
                     
-                    <div class="separator-watch"></div>
+                    <!-- <div class="separator-watch"></div> -->
                 </div>      
             </div>
         </main>
-        <script src="index.js"></script>
+        <script type="module" src="watchlist.js"></script>
     </body>
 </html>
