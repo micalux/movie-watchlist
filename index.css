@@ -107,6 +107,7 @@ form button {
 
 .results-container {
     margin: 0 auto;
+    min-width: 410px;
     width: 80%;
 }
 
@@ -115,6 +116,10 @@ form button {
     flex-direction: column;
     align-items: center;
     color: #787878;;
+}
+
+.default-txt a {
+    text-decoration: none;
 }
 
 .hidden {
@@ -209,7 +214,7 @@ form button {
     cursor: pointer;
 }
 
-#add-to-watchlist-btn {
+.watchlist-btn {
     display: flex;
     align-items: center;
 }
@@ -231,6 +236,7 @@ form button {
 
 .separator-watch {
     margin-top: 1.75em;
+    margin-bottom: 1.75em;
     border-top: 1px solid #ffffff;
     width: 100%;
 }

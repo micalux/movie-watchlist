@@ -1,16 +1,19 @@
-export {hideElement}
+export {hideElement, showElement, moviesFromLS}
 
 const apiKey = '37e37f1f'
-const searchBtn = document.getElementById('search-btn')
 const form = document.querySelector('form')
 const movieContainer = document.getElementById('movie-container')
 const indexDefaultTxt = document.getElementById('index-default-txt')
 const searchForm = document.getElementById('search-form')
-const watchlistContainer = document.getElementById('watchlist-container')
+const moviesFromLS = JSON.parse(localStorage.getItem('fav-movies'))
 
-let myWatchlistObj = []
+let myWatchlist = []
+let searchedMovies = []
 
 
+if (moviesFromLS) {
+    myWatchlist = moviesFromLS
+}
 
 
 if (searchForm) {
@@ -21,9 +24,9 @@ if (searchForm) {
         fetch(`http://www.omdbapi.com/?apikey=${apiKey}&t=${searchInput}`)
             .then (res => res.json())
             .then (data => {
-                console.log(data)
                 hideElement(indexDefaultTxt)
                 if (data.Title) {
+                    searchedMovies.push(data)
                     renderSearch(data)
                 } else {
                     displaySearchError()
@@ -46,9 +49,9 @@ const renderSearch = (movie) => {
                 <div class="row-2">
                     <p class="duration">${movie.Runtime}</p>
                     <p class="genre">${movie.Genre}</p>
-                    <div id="add-to-watchlist-btn">
-                        <i class="fa-solid fa-circle-plus"></i>
-                        <p class="watchlist">Watchlist</p>
+                    <div class="watchlist-btn">
+                        <i class="fa-solid fa-circle-plus data-addid="${movie.imdbID}""></i>
+                        <p class="watchlist" data-addid="${movie.imdbID}">Watchlist</p>
                     </div>
                 </div>              
                 <p class="description">${movie.Plot}</p>
@@ -56,18 +59,24 @@ const renderSearch = (movie) => {
          </div> 
          <div class="separator"></div> 
     `
-    const addToWatchlistBtn = document.getElementById('add-to-watchlist-btn')
-    addToWhatchlist(addToWatchlistBtn, movie)
 }
 
-function addToWhatchlist(e, movie) {
-    e.addEventListener('click', () => {
-        myWatchlistObj.push(movie)
-        // verificare se già presente
-        localStorage.setItem('fav-movies', JSON.stringify(myWatchlistObj))
-        console.log(myWatchlistObj)
-    })
-}
+// add to watchlist function
+document.addEventListener('click', (e) => {
+    const movieId = e.target.dataset.addid
+
+        if (movieId) {
+            if (!myWatchlist.some((obj) => obj.imdbID === movieId)) { 
+                myWatchlist.unshift(searchedMovies.find(movie => movie.imdbID === movieId))
+                updateLocalStorage()
+                console.log('Movie added to watchlist')
+            } else {
+                console.log('Movie already exists on watchlist')
+                console.log(myWatchlist)
+            }
+        }
+    }
+)
 
 function displaySearchError() {
     movieContainer.innerHTML = `
@@ -78,6 +87,14 @@ function displaySearchError() {
     `
 }
 
+function updateLocalStorage() {
+    localStorage.setItem('fav-movies', JSON.stringify(myWatchlist))
+}
+
 function hideElement(e) {
     e.classList.add('hidden')
+}
+
+function showElement(e) {
+    e.classList.remove('hidden')
 }
