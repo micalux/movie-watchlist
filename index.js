@@ -21,7 +21,7 @@ if (searchForm) {
         e.preventDefault()
         const searchInput = document.getElementById('search-input').value
     
-        fetch(`http://www.omdbapi.com/?apikey=${apiKey}&t=${searchInput}`)
+        fetch(`https://www.omdbapi.com/?apikey=${apiKey}&t=${searchInput}`)
             .then (res => res.json())
             .then (data => {
                 hideElement(indexDefaultTxt)
