@@ -46,6 +46,10 @@ const renderWatchList = () => {
 renderWatchList()
 
 
+function updateLocalStorage() {
+    localStorage.setItem('fav-movies', JSON.stringify(myWatchlist))
+
+    
 // remove from watchlist
 document.addEventListener('click', (e) => {
     const movieId = e.target.dataset.removeid
@@ -58,6 +62,5 @@ document.addEventListener('click', (e) => {
 )
 
 
-function updateLocalStorage() {
-    localStorage.setItem('fav-movies', JSON.stringify(myWatchlist))
+
 }
